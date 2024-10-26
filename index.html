@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Telegram - Социальная сеть и мессенджер</title>
+    <link rel="stylesheet" href="my.css">
+    <style>#language-selector {
+    display: none;
+}
+</style>
+<!-- Pixel Code for https://mpwmp.dkon.app/ -->
+<script defer src="https://mpwmp.dkon.app/pixel/h0vXDSQrWYS12w8N"></script>
+<!-- END Pixel Code -->
+</head>
+<body>
+
+<header>
+    <h1 id="welcome-title">Добро пожаловать в Telegram</h1>
+    <p id="welcome-text">Связывайтесь с друзьями и семьей легко и быстро!</p>
+    <select id="language-selector" onchange="changeLanguage()">
+        <option value="ru">Русский</option>
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="uk">Українська</option>
+        <option value="fr">Français</option>
+    </select>
+</header>
+
+<div class="container">
+    <h2 id="features-title">Почему выбирают нас?</h2>
+    <div class="features">
+        <div class="feature">
+            <h3 id="secure-messages-title">Безопасные сообщения</h3>
+            <p id="secure-messages-text">Все ваши сообщения защищены сквозным шифрованием.</p>
+        </div>
+        <div class="feature">
+            <h3 id="communities-title">Сообщества</h3>
+            <p id="communities-text">Создавайте сообщества по интересам и набирайте людей, объединенных общими увлечениями.</p>
+        </div>
+        <div class="feature">
+            <h3 id="marketplace-title">Маркетплейс</h3>
+            <p id="marketplace-text">В нашем приложении есть маркет, где пользователи могут продавать свои товары и развивать бизнес.</p>
+        </div>
+        <div class="feature">
+            <h3 id="clean-interface-title">Чистый интерфейс</h3>
+            <p id="clean-interface-text">В сети отсутствует любая реклама, что делает интерфейс очень приятным для использования.</p>
+        </div>
+    </div>
+    
+    <h2 id="download-title">Скачайте наше приложение</h2>
+    <div class="download-links">
+        <a href="https://dkon.app/dev/last_version/dkon.apk" class="download-button">Android</a>
+        <a href="https://dkon.app/dev/last_version/dkon.exe" class="download-button">Windows</a>
+        <a href="https://dkon.app/dev/last_version/dkon.dmg" class="download-button">MacOS</a>
+        <a href="https://dkon.app/dev/last_version/dkon.appimage" class="download-button">Linux</a>
+    </div>
+</div>
+
+<footer>
+    <p id="footer-text">&copy; 2024 Telegram. Все права защищены.</p>
+</footer>
+
+<script src="lang.js"></script>
+<script>
+    // Определение языка пользователя
+    const userLang = navigator.language || navigator.userLanguage; 
+    const lang = userLang.split('-')[0]; // Получаем только код языка (например, "en" из "en-US")
+
+    // Устанавливаем язык при загрузке
+    if (translations[lang]) {
+        setLanguage(lang);
+    } else {
+        setLanguage('en'); // По умолчанию русский
+    }
+
+    function setLanguage(lang) {
+        document.getElementById("page-title").innerText = translations[lang].title;
+        document.getElementById("welcome-title").innerText = translations[lang].welcomeTitle;
+        document.getElementById("welcome-text").innerText = translations[lang].welcomeText;
+        document.getElementById("features-title").innerText = translations[lang].featuresTitle;
+        document.getElementById("secure-messages-title").innerText = translations[lang].secureMessagesTitle;
+        document.getElementById("secure-messages-text").innerText = translations[lang].secureMessagesText;
+        document.getElementById("communities-title").innerText = translations[lang].communitiesTitle;
+        document.getElementById("communities-text").innerText = translations[lang].communitiesText;
+        document.getElementById("marketplace-title").innerText = translations[lang].marketplaceTitle;
+        document.getElementById("marketplace-text").innerText = translations[lang].marketplaceText;
+        document.getElementById("clean-interface-title").innerText = translations[lang].cleanInterfaceTitle;
+        document.getElementById("clean-interface-text").innerText = translations[lang].cleanInterfaceText;
+        document.getElementById("download-title").innerText = translations[lang].downloadTitle;
+        document.getElementById("footer-text").innerHTML = translations[lang].footerText;
+    }
+
+    function changeLanguage() {
+        const lang = document.getElementById("language-selector").value;
+        setLanguage(lang);
+    }
+</script>
+
+</body>
+</html>
